@@ -1,0 +1,15 @@
+<div>
+
+  <input [(ngModel)]="newTitle" type="text" placeholder= "Task Description">
+  <input  [(ngModel)]="newDate" type="date" >
+  <button (click)="taskAdded()">Add</button>
+
+  <ul>
+    <li *ngFor = "let t of taskList; index as i" >
+      {{t.title}}
+       {{ t.date | date: "dd.MM.yyyy" }}
+       <button (click)="deleteTask(i)">Delete</button>
+    </li>
+  </ul>
+
+</div>
